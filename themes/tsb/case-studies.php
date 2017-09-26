@@ -9,28 +9,23 @@
 		<main id="main" class="site-main" role="main">
  
         <?php // Display blog posts on any page @ http://m0n.co/l
+		$done = false;
         $temp = $wp_query; $wp_query= null;
-        $wp_query = new WP_Query(); $wp_query->query('showposts=50');?>
+        $wp_query = new WP_Query(); $wp_query->query('category=project');?>
 
-		<table> 
-		<?php for($r = 0; $r<5 && $wp_query->have_posts(); $r++)	{?>
-			<tr>
-			<?php for($c = 0; $c < 3 && $wp_query->have_posts(); $c++) { $wp_query->the_post(); ?>
-				<td>
-				<?php 
-				$attachments = get_posts( array(
-    	        	'post_type' => 'attachment',
-	    	        'posts_per_page' => -1,
-    	    	    'post_parent' => $post->ID,
-	            	'exclude'     => get_post_thumbnail_id()
-	    		) );
-    			if ( $attachments ) echo wp_get_attachment_image( $attachments[0]->ID, array(120,80));
-				?>	
+		<article class="page type-page status-publish hentry"><div class="entry-content">
+		<table class="gallery"> 
+		<?php for($r=0; $r<5 && !$done; $r++)	{?>
+			<tr class="gallery-columns-3">
+			<?php for($c=0; $c<3 && !$done; $c++) { if($wp_query->have_posts()) { $wp_query->the_post(); ?>
+				<td class="gallery-item"><figure>
+					<a href="<?php echo esc_url( get_permalink()); ?>">
+					<?php echo get_the_post_thumbnail( null, array(300, 200), array( 'class' => 'gallery-icon') ); ?></a></figure>
 				</td>
-			<?php } ?>
+			<?php } else { $done = true;} } ?>
 			</tr>
 		<?php } ?>
-		</table>
+		</table></div></article>
  
         <?php wp_reset_postdata(); ?>
 		</main><!-- .site-main -->
