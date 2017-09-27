@@ -18,8 +18,8 @@
 		<?php for($r=0; $r<5 && !$done; $r++)	{?>
 			<tr class="gallery-columns-3">
 			<?php for($c=0; $c<3 && !$done; $c++) { if($wp_query->have_posts()) { $wp_query->the_post(); ?>
-				<td class="gallery-item"><figure>
-					<a href="<?php echo esc_url( get_permalink()); ?>">
+				<td class="gallery-item">
+					<figure><a href="<?php echo esc_url( get_permalink()); ?>">
 					<?php echo get_the_post_thumbnail( null, array(300, 200), array( 'class' => 'gallery-icon') ); ?></a></figure>
 				</td>
 			<?php } else { $done = true;} } ?>
