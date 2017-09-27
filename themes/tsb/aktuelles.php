@@ -15,11 +15,13 @@ get_header(); ?>
 
 		<?php while( $wp_query->have_posts()) : $wp_query->the_post(); ?>
 			<article class="page type-page status-publish hentry"><div class="entry-content">
+			<a name="post<?php echo the_ID(); ?>"/>
 			<?php 
 				twentyfifteen_post_thumbnail();?>
-				<q class="post-date"><?php echo the_date('d. F Y');?></q>
+				<p class="post-date"><?php echo the_date('d. F Y');?></p>
 				<h1><?php echo the_title();?></h1>
-				<?php echo $post->post_content;?>
+				<?php echo the_content();?>
+				<?php if(has_tag()) {?><div class="post-status"><?php the_tags('Status: ', ', ');?></div><?php } ?>
 			</div></article>
 		<?php endwhile; ?>
         <?php wp_reset_postdata(); ?>

@@ -14,6 +14,9 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
+:root {
+	--highlight-color: rgb(238,180,38);
+}
 
 /**
  * Table of Contents
@@ -398,7 +401,7 @@ li::before {
 }
 
 q {
-	color: rgb(238,180,38);
+	color: var(--highlight-color);
 }
 
 dl {
@@ -661,7 +664,7 @@ input[type="radio"] {
  */
 
 a {
-	color: #333;
+	color: var(--highlight-color);
 	text-decoration: none;
 }
 
@@ -677,6 +680,7 @@ a:focus {
  */
 
 .main-navigation a {
+	color: #333;
 	display: block;
 	padding: 0.8em 0;
 	position: relative;
@@ -704,7 +708,7 @@ a:focus {
 }
 .main-navigation li::before {
   content: "";
-  color: rgb(238,180,38);
+  color: var(--highlight-color);
 }
 
 .main-navigation .current-menu-item > a,
@@ -1631,7 +1635,15 @@ img.aligncenter {
 
 .post-date {
 	text-transform: uppercase;
-	color: --highlight-color;
+	color: var(--highlight-color);
+}
+
+.post-status {
+	border: 1px solid var(--highlight-color);
+	padding: 10px 20px;
+	float: right;
+	color: var(--highlight-color);
+	margin-bottom: 40px;
 }
 
 .post-thumbnail {
@@ -1777,7 +1789,7 @@ a.post-thumbnail:focus {
 .page-content a,
 .comment-content a,
 .pingback .comment-body > a {
-	border-bottom: 1px solid #333;
+/*	border-bottom: 1px solid #333;*/
 }
 
 .entry-content a:hover,

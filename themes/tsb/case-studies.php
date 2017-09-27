@@ -11,7 +11,8 @@
         <?php // Display blog posts on any page @ http://m0n.co/l
 		$done = false;
         $temp = $wp_query; $wp_query= null;
-        $wp_query = new WP_Query(); $wp_query->query('category=project');?>
+        $wp_query = new WP_Query(); $wp_query->query('category=project');
+		?>
 
 		<article class="page type-page status-publish hentry"><div class="entry-content">
 		<table class="gallery"> 
