@@ -17,11 +17,11 @@ get_header(); ?>
 			<article class="page type-page status-publish hentry"><div class="entry-content">
 			<a name="post<?php echo the_ID(); ?>"/>
 			<?php 
-				twentyfifteen_post_thumbnail();?>
-				<p class="post-date"><?php echo the_date('d. F Y');?></p>
-				<h1><?php echo the_title();?></h1>
-				<?php echo the_content();?>
-				<?php if(has_tag()) {?><div class="post-status"><?php the_tags('Status: ', ', ');?></div><?php } ?>
+				twentyfifteen_post_thumbnail();
+				the_date('d. F Y', '<b>', '</b>');
+				the_title('<h1>', '</h1>');
+				the_content();
+				if(has_tag()) the_tags('<div class="post-status">Status: ', ', ', '</div>');?>
 			</div></article>
 		<?php endwhile; ?>
         <?php wp_reset_postdata(); ?>

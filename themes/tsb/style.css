@@ -236,7 +236,10 @@ p {
 
 b,
 strong {
-	font-weight: 700;
+	font-weight: 400;
+	color: var(--highlight-color);
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
 }
 
 dfn,
@@ -419,14 +422,14 @@ dd {
 table,
 th,
 td {
-	border: 1px solid #eaeaea;
-	border: 1px solid rgba(51, 51, 51, 0.1);
+	border: 0px solid #eaeaea;
+	border: 0px solid rgba(51, 51, 51, 0.1);
 }
 
 table {
 	border-collapse: separate;
 	border-spacing: 0;
-	border-width: 1px 0 0 1px;
+	border-width: 0px;
 	margin: 0 0 1.6em;
 	table-layout: fixed; /* Prevents HTML tables from becoming too wide */
 	width: 100%;
@@ -440,16 +443,16 @@ td {
 }
 
 th {
-	border-width: 0 1px 1px 0;
+	border-width: 0px;
 	font-weight: 700;
 }
 
 td {
-	border-width: 0 1px 1px 0;
+	border-width: 0px;
 }
 
 th, td {
-	padding: 0.4em;
+/*	padding: 0.4em;*/
 }
 
 img {
@@ -1359,6 +1362,24 @@ img.aligncenter {
 	opacity: 0.7;
 }
 
+.tsb-block {
+	float: right;
+	text-align: right;
+	font-size: 72px;
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	z-index: 100;
+}
+
+.tsb-txt {
+    white-space: nowrap;
+   	overflow: hidden;
+	display: inline-block;
+	vertical-align: bottom;
+	text-align: right;
+	direction: rtl;
+}
 
 /**
  * 11.0 Widgets

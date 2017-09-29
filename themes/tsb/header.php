@@ -22,6 +22,11 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+<div id="tsb" class="tsb-block">
+	<?php get_template_part( 'tsb' ); ?>
+</div>
+
 <div id="page" class="hfeed site">
 
 <div id="sidebar" class="sidebar">
