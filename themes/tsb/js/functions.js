@@ -211,7 +211,6 @@
 		});
 
 		jQuery(window).scroll(function()	{
-			console.log(jQuery(document).scrollTop());
 			jQuery('#tsb').css("opacity", Math.max(0, 200 - jQuery(document).scrollTop()) / 200);
 		});
 	}

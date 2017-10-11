@@ -15,8 +15,8 @@
 				<?php # main menu
 				$pages = get_pages( array('sort_column' => 'menu_order'));
 				foreach ( $pages as $page ) { ?>
-					<li class="menu-item menu-item-post-type menu-item-object-page<?php if(is_page($page->post_title)) echo " current-menu-item" ?>">
-					<a href="<?php echo esc_url( get_permalink($page->ID));?>"><?php echo $page->post_title;?></a>
+					<li class="menu-item<?php if(is_page($page->post_title)) echo " current-menu-item" ?>">
+					<a href="<?php echo esc_url( get_permalink($page->ID));?>"><span><?php echo $page->post_title;?></span></a>
 					</li>
 					<?php if( is_page($page->post_title) && $page->post_name == 'aktuelles') { ?>
 						<ul class="sub-menu toggled-on">

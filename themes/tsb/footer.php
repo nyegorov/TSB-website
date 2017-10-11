@@ -14,6 +14,12 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
+			<table><tr>
+			<td><a href="/impressum">Impressum</a></td>
+			<td>Thomas Schneider<br>Baumanagement</td>
+			<td>Neusiedlerstraße 53<br>4050 Traun</td>
+			<td>+43 660 460 28 08<br>office@thomasschneider.at</td>
+			</tr></table>
 		</div><!-- .site-info -->
 	</footer><!-- .site-footer -->
 
