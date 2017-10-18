@@ -3,6 +3,16 @@ Theme Name: Twenty Fifteen
 Description: Used to style the TinyMCE editor.
 */
 
+@font-face {
+    font-family: "moderat";
+    src: url(fonts/Moderat-Regular.woff);
+}
+
+@font-face {
+    font-family: "moderat";
+    src: url(fonts/Moderat-Bold.woff);
+	font-weight: bold;
+}
 
 /**
  * Table of Contents:
@@ -24,7 +34,7 @@ Description: Used to style the TinyMCE editor.
 
 body {
 	color: #333;
-	font-family: "Noto Serif", serif;
+	font-family: moderat, arial, sans-serif;
 	font-weight: 400;
 	font-size: 17px;
 	line-height: 1.6471;
@@ -127,7 +137,6 @@ blockquote > p:last-child {
 blockquote cite,
 blockquote small {
 	color: #333;
-	font-family: "Noto Sans", sans-serif;
 	font-size: 17px;
 	line-height: 1.6471;
 }
@@ -154,7 +163,6 @@ tt,
 var,
 samp,
 pre {
-	font-family: Inconsolata, monospace;
 }
 
 pre {
@@ -281,7 +289,6 @@ table th,
 .mce-item-table th,
 table caption {
 	border-width: 0 1px 1px 0;
-	font-family: "Noto Serif", serif;
 	font-size: 17px;
 	font-weight: 700;
 	padding: 7px;
@@ -292,7 +299,6 @@ table caption {
 table td,
 .mce-item-table td {
 	border-width: 0 1px 1px 0;
-	font-family: "Noto Serif", serif;
 	font-size: 17px;
 	padding: 7px;
 	vertical-align: baseline;
@@ -349,7 +355,6 @@ a {
 	background: transparent;
 	border: none;
 	color: #707070;
-	font-family: "Noto Sans", sans-serif;
 	margin: 0 0 28px 0;
 	max-width: 100%;
 	padding: 0;
@@ -423,7 +428,6 @@ a {
 .gallery .gallery-caption {
 	color: #707070;
 	display: block;
-	font-family: "Noto Sans", sans-serif;
 	font-size: 14px;
 	line-height: 1.5;
 	padding: 7px 0;

@@ -23,9 +23,7 @@
 
 <body <?php body_class(); ?>>
 
-<div id="tsb" class="tsb-block">
-	<?php get_template_part( 'tsb' ); ?>
-</div>
+<?php get_template_part( 'tsb' ); ?>
 
 <div id="page" class="hfeed site">
 

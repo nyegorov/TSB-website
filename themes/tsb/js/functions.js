@@ -177,7 +177,7 @@
 
 } )( jQuery );
 
-	function init_tsb(ids)	{
+	function init_tsb(ids, dont_close)	{
 		var tsb = {	blocks: [] };
 		var widen = function(b, state)	 { 
 			if(state)	{
@@ -199,7 +199,7 @@
 				block: o_block,
 				width: o_text.innerWidth(),
 			}
-			widen(tsb.blocks[i], false);
+			if(!dont_close) widen(tsb.blocks[i], false);
 			o_block.mouseenter(function() {
 				id = this.id;
 				jQuery.each(tsb.blocks, function(i, o) { widen(o, o.id == id);});
