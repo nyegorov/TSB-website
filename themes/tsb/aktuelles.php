@@ -63,8 +63,8 @@ jQuery(window).scroll(onScroll);
 		<article class="page type-page status-publish hentry"><div class="entry-content">
 		<a id="post<?php the_ID();?>"></a>
 		<?php 
-			the_post_thumbnail( 'post-thumbnail', array( 'alt' => get_the_title() ) );
-			the_date('d. F Y', '<h1>', '</h1>');
+			the_post_thumbnail( 'full', array( 'alt' => get_the_title() ) );
+			the_date('d. F Y', '<br><br><br><h1>', '</h1>');
 			the_title('<h3>', '</h3>');
 			echo '<hr>';
 			the_content();
