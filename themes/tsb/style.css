@@ -220,6 +220,7 @@ h1 {
 	color: #FF9F2C;
 	text-transform: uppercase;
 	letter-spacing: 7px;
+	padding-bottom: 16px;
 }
 
 h2 {
@@ -769,6 +770,14 @@ a:visited {
 }
 
 .main-navigation .current-menu-item > span:after {
+	content: '';
+	display: block;
+	height: 3px;
+	width: 100%;
+	background: #FF9F2C;
+}
+
+.main-navigation .current-menu-item > a:after {
 	content: '';
 	display: block;
 	height: 3px;
@@ -2777,17 +2786,30 @@ p > video {
 	margin-bottom: 0;
 }
 
-.collapseomatic_content {
-/*	display: block;*/
+.collapseomatic {
+	background-image: url(icons/arrow_down.svg) !important;
+	padding: 20px 0;
 	border-bottom: 1px solid #FF9F2C;
-	padding: 10px 0;
 }
+
+.collapseomatic:hover {
+	text-decoration: none;
+}
+
 .collapseomatic:after {
-	content: "<hr>";
+}
+
+.collapseomatic_content {
+	padding: 16px 400px 32px 0;
+	margin: 0;
+}
+
+.arrowright {
+	background-position-y: center;
 }
 
 .colomat-close {
-    background-image: "" !important;
+	background-image: url(icons/arrow.svg) !important;
 }
 
 /**

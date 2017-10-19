@@ -16,9 +16,9 @@
 		<div class="site-info">
 			<table><tr>
 			<td></td>
-			<td>Thomas Schneider<br>Baumanagement</td>
-			<td>Neusiedlerstraße 53<br>4050 Traun</td>
-			<td>+43 660 460 28 08<br>office@thomasschneider.at</td>
+			<td><?php echo get_custom('company_name');?></td>
+			<td><?php echo get_custom('company_address');?></td>
+			<td><?php echo get_custom('company_tel');?><br><?php echo get_custom('company_email');?></td>
 			</tr></table>
 		</div><!-- .site-info -->
 	</footer><!-- .site-footer -->
