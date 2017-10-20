@@ -44,7 +44,7 @@ jQuery(window).load(function() {
 		while($wp_query->have_posts() )	{ 
 			$wp_query->the_post();
 			echo '<figure class="gallery-item"><div class="gallery-icon landscape"><a href="'; the_permalink(); echo '">';
-			echo get_the_post_thumbnail( null, 'full', array( 'class' => 'gallery-icon', 'id' => 'gal'.get_the_ID()) );
+			echo get_the_post_thumbnail( null, 'large', array( 'class' => 'gallery-icon', 'id' => 'gal'.get_the_ID()) );
 			echo '</a></div></figure>';
 		} 
 	}?></div></div></article>

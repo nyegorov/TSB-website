@@ -5,13 +5,13 @@
  * Learn more: {@link https://codex.wordpress.org/Template_Hierarchy}
  *
  * @package WordPress
- * @subpackage Twenty_Fifteen
- * @since Twenty Fifteen 1.0
+ * @subpackage TSB
+ * @since TSB 1.0
  */
 ?>
 
 <section class="no-results not-found">
 	<header class="page-header">
-		<h1 class="page-title"><?php _e( 'Nothing Found', 'twentyfifteen' ); ?></h1>
+		<h1 class="page-title"><?php _e( 'Nothing Found', 'tsb' ); ?></h1>
 	</header><!-- .page-header -->
 </section><!-- .no-results -->

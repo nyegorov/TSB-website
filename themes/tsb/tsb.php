@@ -1,6 +1,5 @@
 <div id="tsb" class="tsb-block">
-	<span id="tsb1" class="tsb">T<div id="tsb1-txt" class="tsb-txt">&nbsp;homas</div></span><span id="tsb2" class="tsb">S<div id="tsb2-txt" class="tsb-txt">chneider</div></span>
-	<br>
+	<div><span id="tsb1" class="tsb">T<div id="tsb1-txt" class="tsb-txt">&nbsp;homas</div></span><span id="tsb2" class="tsb">S<div id="tsb2-txt" class="tsb-txt">chneider</div></span></div>
 	<span id="tsb3" class="tsb">B<div id="tsb3-txt" class="tsb-txt">aumanagement</div></span>
 </div>
 

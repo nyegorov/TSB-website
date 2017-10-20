@@ -62,7 +62,7 @@
 			return;
 		}
 
-		button.on( 'click.twentyfifteen', function() {
+		button.on( 'click.tsb', function() {
 			secondary.toggleClass( 'toggled-on' );
 			secondary.trigger( 'resize' );
 			$( this ).toggleClass( 'toggled-on' );
@@ -80,7 +80,7 @@
 	 * @summary Add or remove ARIA attributes.
 	 * Uses jQuery's width() function to determine the size of the window and add
 	 * the default ARIA attributes for the menu toggle if it's visible.
-	 * @since Twenty Fifteen 1.1
+	 * @since TSB 1.1
 	 */
 	function onResizeARIA() {
 		if ( 955 > $window.width() ) {
@@ -159,14 +159,14 @@
 		adminbarOffset = $body.is( '.admin-bar' ) ? $( '#wpadminbar' ).height() : 0;
 
 		$window
-			.on( 'scroll.twentyfifteen', scroll )
-			.on( 'load.twentyfifteen', onResizeARIA )
-			.on( 'resize.twentyfifteen', function() {
+			.on( 'scroll.tsb', scroll )
+			.on( 'load.tsb', onResizeARIA )
+			.on( 'resize.tsb', function() {
 				clearTimeout( resizeTimer );
 				resizeTimer = setTimeout( resizeAndScroll, 500 );
 				onResizeARIA();
 			} );
-		$sidebar.on( 'click.twentyfifteen keydown.twentyfifteen', 'button', resizeAndScroll );
+		$sidebar.on( 'click.tsb keydown.tsb', 'button', resizeAndScroll );
 
 		resizeAndScroll();
 
@@ -176,6 +176,10 @@
 	} );
 
 } )( jQuery );
+
+	function on_tsb_scroll()	{
+		jQuery('#tsb').css("opacity", Math.max(0, 200 - jQuery(document).scrollTop()) / 200);
+	};
 
 	function init_tsb(ids, dont_close)	{
 		var tsb = {	blocks: [] };
@@ -210,7 +214,6 @@
 			});	
 		});
 
-		jQuery(window).scroll(function()	{
-			jQuery('#tsb').css("opacity", Math.max(0, 200 - jQuery(document).scrollTop()) / 200);
-		});
+		jQuery(window).scroll(on_tsb_scroll);
+		on_tsb_scroll();
 	}

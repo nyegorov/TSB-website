@@ -1,6 +1,6 @@
 <?php
 /**
- * Twenty Fifteen functions and definitions
+ * TSB functions and definitions
  *
  * Set up the theme and provides some helper functions, which are used in the
  * theme as custom template tags. Others are attached to action and filter
@@ -21,27 +21,27 @@
  * {@link https://codex.wordpress.org/Plugin_API}
  *
  * @package WordPress
- * @subpackage Twenty_Fifteen
- * @since Twenty Fifteen 1.0
+ * @subpackage TSB
+ * @since TSB 1.0
  */
 
 /**
  * Set the content width based on the theme's design and stylesheet.
  *
- * @since Twenty Fifteen 1.0
+ * @since TSB 1.0
  */
 if ( ! isset( $content_width ) ) {
 	$content_width = 660;
 }
 
 /**
- * Twenty Fifteen only works in WordPress 4.1 or later.
+ * TSB only works in WordPress 4.1 or later.
  */
 if ( version_compare( $GLOBALS['wp_version'], '4.1-alpha', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 }
 
-if ( ! function_exists( 'twentyfifteen_setup' ) ) :
+if ( ! function_exists( 'tsb_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -49,17 +49,17 @@ if ( ! function_exists( 'twentyfifteen_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  *
- * @since Twenty Fifteen 1.0
+ * @since TSB 1.0
  */
-function twentyfifteen_setup() {
+function tsb_setup() {
 
 	/*
 	 * Make theme available for translation.
-	 * Translations can be filed at WordPress.org. See: https://translate.wordpress.org/projects/wp-themes/twentyfifteen
-	 * If you're building a theme based on twentyfifteen, use a find and replace
-	 * to change 'twentyfifteen' to the name of your theme in all the template files
+	 * Translations can be filed at WordPress.org. See: https://translate.wordpress.org/projects/wp-themes/tsb
+	 * If you're building a theme based on tsb, use a find and replace
+	 * to change 'tsb' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'twentyfifteen' );
+	load_theme_textdomain( 'tsb' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -82,8 +82,8 @@ function twentyfifteen_setup() {
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu',      'twentyfifteen' ),
-		'social'  => __( 'Social Links Menu', 'twentyfifteen' ),
+		'primary' => __( 'Primary Menu',      'tsb' ),
+		'social'  => __( 'Social Links Menu', 'tsb' ),
 	) );
 
 	/*
@@ -106,7 +106,7 @@ function twentyfifteen_setup() {
 	/*
 	 * Enable support for custom logo.
 	 *
-	 * @since Twenty Fifteen 1.5
+	 * @since TSB 1.5
 	 */
 	add_theme_support( 'custom-logo', array(
 		'height'      => 248,
@@ -114,15 +114,15 @@ function twentyfifteen_setup() {
 		'flex-height' => true,
 	) );
 
-	$color_scheme  = twentyfifteen_get_color_scheme();
+	$color_scheme  = tsb_get_color_scheme();
 	$default_color = trim( $color_scheme[0], '#' );
 
 	// Setup the WordPress core custom background feature.
 
 	/**
-	 * Filter Twenty Fifteen custom-header support arguments.
+	 * Filter TSB custom-header support arguments.
 	 *
-	 * @since Twenty Fifteen 1.0
+	 * @since TSB 1.0
 	 *
 	 * @param array $args {
 	 *     An array of custom-header support arguments.
@@ -131,7 +131,7 @@ function twentyfifteen_setup() {
 	 *     @type string $default-attachment     Default attachment of the header.
 	 * }
 	 */
-	add_theme_support( 'custom-background', apply_filters( 'twentyfifteen_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'tsb_custom_background_args', array(
 		'default-color'      => $default_color,
 		'default-attachment' => 'fixed',
 	) ) );
@@ -140,44 +140,44 @@ function twentyfifteen_setup() {
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
 	 */
-	add_editor_style( array( 'css/editor-style.css', 'genericons/genericons.css', twentyfifteen_fonts_url() ) );
+	add_editor_style( array( 'css/editor-style.css', 'genericons/genericons.css', tsb_fonts_url() ) );
 
 	// Indicate widget sidebars can use selective refresh in the Customizer.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
 }
-endif; // twentyfifteen_setup
-add_action( 'after_setup_theme', 'twentyfifteen_setup' );
+endif; // tsb_setup
+add_action( 'after_setup_theme', 'tsb_setup' );
 
 /**
  * Register widget area.
  *
- * @since Twenty Fifteen 1.0
+ * @since TSB 1.0
  *
  * @link https://codex.wordpress.org/Function_Reference/register_sidebar
  */
-function twentyfifteen_widgets_init() {
+function tsb_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Widget Area', 'twentyfifteen' ),
+		'name'          => __( 'Widget Area', 'tsb' ),
 		'id'            => 'sidebar-1',
-		'description'   => __( 'Add widgets here to appear in your sidebar.', 'twentyfifteen' ),
+		'description'   => __( 'Add widgets here to appear in your sidebar.', 'tsb' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'twentyfifteen_widgets_init' );
+add_action( 'widgets_init', 'tsb_widgets_init' );
 
-if ( ! function_exists( 'twentyfifteen_fonts_url' ) ) :
+if ( ! function_exists( 'tsb_fonts_url' ) ) :
 /**
- * Register Google fonts for Twenty Fifteen.
+ * Register Google fonts for TSB.
  *
- * @since Twenty Fifteen 1.0
+ * @since TSB 1.0
  *
  * @return string Google fonts URL for the theme.
  */
-function twentyfifteen_fonts_url() {
+function tsb_fonts_url() {
 	$fonts_url = '';
 	$fonts     = array();
 	$subsets   = 'latin,latin-ext';
@@ -186,7 +186,7 @@ function twentyfifteen_fonts_url() {
 	 * Translators: If there are characters in your language that are not supported
 	 * by Noto Sans, translate this to 'off'. Do not translate into your own language.
 	 */
-	if ( 'off' !== _x( 'on', 'Noto Sans font: on or off', 'twentyfifteen' ) ) {
+	if ( 'off' !== _x( 'on', 'Noto Sans font: on or off', 'tsb' ) ) {
 		$fonts[] = 'Noto Sans:400italic,700italic,400,700';
 	}
 
@@ -194,7 +194,7 @@ function twentyfifteen_fonts_url() {
 	 * Translators: If there are characters in your language that are not supported
 	 * by Noto Serif, translate this to 'off'. Do not translate into your own language.
 	 */
-	if ( 'off' !== _x( 'on', 'Noto Serif font: on or off', 'twentyfifteen' ) ) {
+	if ( 'off' !== _x( 'on', 'Noto Serif font: on or off', 'tsb' ) ) {
 		$fonts[] = 'Noto Serif:400italic,700italic,400,700';
 	}
 
@@ -202,7 +202,7 @@ function twentyfifteen_fonts_url() {
 	 * Translators: If there are characters in your language that are not supported
 	 * by Inconsolata, translate this to 'off'. Do not translate into your own language.
 	 */
-	if ( 'off' !== _x( 'on', 'Inconsolata font: on or off', 'twentyfifteen' ) ) {
+	if ( 'off' !== _x( 'on', 'Inconsolata font: on or off', 'tsb' ) ) {
 		$fonts[] = 'Inconsolata:400,700';
 	}
 
@@ -210,7 +210,7 @@ function twentyfifteen_fonts_url() {
 	 * Translators: To add an additional character subset specific to your language,
 	 * translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language.
 	 */
-	$subset = _x( 'no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese)', 'twentyfifteen' );
+	$subset = _x( 'no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese)', 'tsb' );
 
 	if ( 'cyrillic' == $subset ) {
 		$subsets .= ',cyrillic,cyrillic-ext';
@@ -238,65 +238,65 @@ endif;
  *
  * Adds a `js` class to the root `<html>` element when JavaScript is detected.
  *
- * @since Twenty Fifteen 1.1
+ * @since TSB 1.1
  */
-function twentyfifteen_javascript_detection() {
+function tsb_javascript_detection() {
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
 }
-add_action( 'wp_head', 'twentyfifteen_javascript_detection', 0 );
+add_action( 'wp_head', 'tsb_javascript_detection', 0 );
 
 /**
  * Enqueue scripts and styles.
  *
- * @since Twenty Fifteen 1.0
+ * @since TSB 1.0
  */
-function twentyfifteen_scripts() {
+function tsb_scripts() {
 	// Add custom fonts, used in the main stylesheet.
-	wp_enqueue_style( 'twentyfifteen-fonts', twentyfifteen_fonts_url(), array(), null );
+	wp_enqueue_style( 'tsb-fonts', tsb_fonts_url(), array(), null );
 
 	// Add Genericons, used in the main stylesheet.
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.2' );
 
 	// Load our main stylesheet.
-	wp_enqueue_style( 'twentyfifteen-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'tsb-style', get_stylesheet_uri() );
 
 	// Load the Internet Explorer specific stylesheet.
-	wp_enqueue_style( 'twentyfifteen-ie', get_template_directory_uri() . '/css/ie.css', array( 'twentyfifteen-style' ), '20141010' );
-	wp_style_add_data( 'twentyfifteen-ie', 'conditional', 'lt IE 9' );
+	wp_enqueue_style( 'tsb-ie', get_template_directory_uri() . '/css/ie.css', array( 'tsb-style' ), '20141010' );
+	wp_style_add_data( 'tsb-ie', 'conditional', 'lt IE 9' );
 
 	// Load the Internet Explorer 7 specific stylesheet.
-	wp_enqueue_style( 'twentyfifteen-ie7', get_template_directory_uri() . '/css/ie7.css', array( 'twentyfifteen-style' ), '20141010' );
-	wp_style_add_data( 'twentyfifteen-ie7', 'conditional', 'lt IE 8' );
+	wp_enqueue_style( 'tsb-ie7', get_template_directory_uri() . '/css/ie7.css', array( 'tsb-style' ), '20141010' );
+	wp_style_add_data( 'tsb-ie7', 'conditional', 'lt IE 8' );
 
-	wp_enqueue_script( 'twentyfifteen-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20141010', true );
+	wp_enqueue_script( 'tsb-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20141010', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
 	if ( is_singular() && wp_attachment_is_image() ) {
-		wp_enqueue_script( 'twentyfifteen-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20141010' );
+		wp_enqueue_script( 'tsb-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20141010' );
 	}
 
-	wp_enqueue_script( 'twentyfifteen-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20150330', true );
-	wp_localize_script( 'twentyfifteen-script', 'screenReaderText', array(
-		'expand'   => '<span class="screen-reader-text">' . __( 'expand child menu', 'twentyfifteen' ) . '</span>',
-		'collapse' => '<span class="screen-reader-text">' . __( 'collapse child menu', 'twentyfifteen' ) . '</span>',
+	wp_enqueue_script( 'tsb-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20150330', true );
+	wp_localize_script( 'tsb-script', 'screenReaderText', array(
+		'expand'   => '<span class="screen-reader-text">' . __( 'expand child menu', 'tsb' ) . '</span>',
+		'collapse' => '<span class="screen-reader-text">' . __( 'collapse child menu', 'tsb' ) . '</span>',
 	) );
 }
-add_action( 'wp_enqueue_scripts', 'twentyfifteen_scripts' );
+add_action( 'wp_enqueue_scripts', 'tsb_scripts' );
 
 /**
  * Add preconnect for Google Fonts.
  *
- * @since Twenty Fifteen 1.7
+ * @since TSB 1.7
  *
  * @param array   $urls          URLs to print for resource hints.
  * @param string  $relation_type The relation type the URLs are printed.
  * @return array URLs to print for resource hints.
  */
-function twentyfifteen_resource_hints( $urls, $relation_type ) {
-	if ( wp_style_is( 'twentyfifteen-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
+function tsb_resource_hints( $urls, $relation_type ) {
+	if ( wp_style_is( 'tsb-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
 		if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '>=' ) ) {
 			$urls[] = array(
 				'href' => 'https://fonts.gstatic.com',
@@ -309,16 +309,16 @@ function twentyfifteen_resource_hints( $urls, $relation_type ) {
 
 	return $urls;
 }
-add_filter( 'wp_resource_hints', 'twentyfifteen_resource_hints', 10, 2 );
+add_filter( 'wp_resource_hints', 'tsb_resource_hints', 10, 2 );
 
 /**
  * Add featured image as background image to post navigation elements.
  *
- * @since Twenty Fifteen 1.0
+ * @since TSB 1.0
  *
  * @see wp_add_inline_style()
  */
-function twentyfifteen_post_nav_background() {
+function tsb_post_nav_background() {
 	if ( ! is_single() ) {
 		return;
 	}
@@ -349,14 +349,14 @@ function twentyfifteen_post_nav_background() {
 		';
 	}
 
-	wp_add_inline_style( 'twentyfifteen-style', $css );
+	wp_add_inline_style( 'tsb-style', $css );
 }
-add_action( 'wp_enqueue_scripts', 'twentyfifteen_post_nav_background' );
+add_action( 'wp_enqueue_scripts', 'tsb_post_nav_background' );
 
 /**
  * Display descriptions in main navigation.
  *
- * @since Twenty Fifteen 1.0
+ * @since TSB 1.0
  *
  * @param string  $item_output The menu item output.
  * @param WP_Post $item        Menu item object.
@@ -364,45 +364,45 @@ add_action( 'wp_enqueue_scripts', 'twentyfifteen_post_nav_background' );
  * @param array   $args        wp_nav_menu() arguments.
  * @return string Menu item with possible description.
  */
-function twentyfifteen_nav_description( $item_output, $item, $depth, $args ) {
+function tsb_nav_description( $item_output, $item, $depth, $args ) {
 	if ( 'primary' == $args->theme_location && $item->description ) {
 		$item_output = str_replace( $args->link_after . '</a>', '<div class="menu-item-description">' . $item->description . '</div>' . $args->link_after . '</a>', $item_output );
 	}
 
 	return $item_output;
 }
-add_filter( 'walker_nav_menu_start_el', 'twentyfifteen_nav_description', 10, 4 );
+add_filter( 'walker_nav_menu_start_el', 'tsb_nav_description', 10, 4 );
 
 /**
  * Add a `screen-reader-text` class to the search form's submit button.
  *
- * @since Twenty Fifteen 1.0
+ * @since TSB 1.0
  *
  * @param string $html Search form HTML.
  * @return string Modified search form HTML.
  */
-function twentyfifteen_search_form_modify( $html ) {
+function tsb_search_form_modify( $html ) {
 	return str_replace( 'class="search-submit"', 'class="search-submit screen-reader-text"', $html );
 }
-add_filter( 'get_search_form', 'twentyfifteen_search_form_modify' );
+add_filter( 'get_search_form', 'tsb_search_form_modify' );
 
 /**
  * Implement the Custom Header feature.
  *
- * @since Twenty Fifteen 1.0
+ * @since TSB 1.0
  */
 require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
  *
- * @since Twenty Fifteen 1.0
+ * @since TSB 1.0
  */
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
  * Customizer additions.
  *
- * @since Twenty Fifteen 1.0
+ * @since TSB 1.0
  */
 require get_template_directory() . '/inc/customizer.php';

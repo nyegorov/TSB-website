@@ -1,63 +1,63 @@
 <?php
 /**
- * Twenty Fifteen back compat functionality
+ * TSB back compat functionality
  *
- * Prevents Twenty Fifteen from running on WordPress versions prior to 4.1,
+ * Prevents TSB from running on WordPress versions prior to 4.1,
  * since this theme is not meant to be backward compatible beyond that and
  * relies on many newer functions and markup changes introduced in 4.1.
  *
  * @package WordPress
- * @subpackage Twenty_Fifteen
- * @since Twenty Fifteen 1.0
+ * @subpackage TSB
+ * @since TSB 1.0
  */
 
 /**
- * Prevent switching to Twenty Fifteen on old versions of WordPress.
+ * Prevent switching to TSB on old versions of WordPress.
  *
  * Switches to the default theme.
  *
- * @since Twenty Fifteen 1.0
+ * @since TSB 1.0
  */
-function twentyfifteen_switch_theme() {
+function tsb_switch_theme() {
 	switch_theme( WP_DEFAULT_THEME, WP_DEFAULT_THEME );
 	unset( $_GET['activated'] );
-	add_action( 'admin_notices', 'twentyfifteen_upgrade_notice' );
+	add_action( 'admin_notices', 'tsb_upgrade_notice' );
 }
-add_action( 'after_switch_theme', 'twentyfifteen_switch_theme' );
+add_action( 'after_switch_theme', 'tsb_switch_theme' );
 
 /**
  * Add message for unsuccessful theme switch.
  *
  * Prints an update nag after an unsuccessful attempt to switch to
- * Twenty Fifteen on WordPress versions prior to 4.1.
+ * TSB on WordPress versions prior to 4.1.
  *
- * @since Twenty Fifteen 1.0
+ * @since TSB 1.0
  */
-function twentyfifteen_upgrade_notice() {
-	$message = sprintf( __( 'Twenty Fifteen requires at least WordPress version 4.1. You are running version %s. Please upgrade and try again.', 'twentyfifteen' ), $GLOBALS['wp_version'] );
+function tsb_upgrade_notice() {
+	$message = sprintf( __( 'TSB requires at least WordPress version 4.1. You are running version %s. Please upgrade and try again.', 'tsb' ), $GLOBALS['wp_version'] );
 	printf( '<div class="error"><p>%s</p></div>', $message );
 }
 
 /**
  * Prevent the Customizer from being loaded on WordPress versions prior to 4.1.
  *
- * @since Twenty Fifteen 1.0
+ * @since TSB 1.0
  */
-function twentyfifteen_customize() {
-	wp_die( sprintf( __( 'Twenty Fifteen requires at least WordPress version 4.1. You are running version %s. Please upgrade and try again.', 'twentyfifteen' ), $GLOBALS['wp_version'] ), '', array(
+function tsb_customize() {
+	wp_die( sprintf( __( 'TSB requires at least WordPress version 4.1. You are running version %s. Please upgrade and try again.', 'tsb' ), $GLOBALS['wp_version'] ), '', array(
 		'back_link' => true,
 	) );
 }
-add_action( 'load-customize.php', 'twentyfifteen_customize' );
+add_action( 'load-customize.php', 'tsb_customize' );
 
 /**
  * Prevent the Theme Preview from being loaded on WordPress versions prior to 4.1.
  *
- * @since Twenty Fifteen 1.0
+ * @since TSB 1.0
  */
-function twentyfifteen_preview() {
+function tsb_preview() {
 	if ( isset( $_GET['preview'] ) ) {
-		wp_die( sprintf( __( 'Twenty Fifteen requires at least WordPress version 4.1. You are running version %s. Please upgrade and try again.', 'twentyfifteen' ), $GLOBALS['wp_version'] ) );
+		wp_die( sprintf( __( 'TSB requires at least WordPress version 4.1. You are running version %s. Please upgrade and try again.', 'tsb' ), $GLOBALS['wp_version'] ) );
 	}
 }
-add_action( 'template_redirect', 'twentyfifteen_preview' );
+add_action( 'template_redirect', 'tsb_preview' );

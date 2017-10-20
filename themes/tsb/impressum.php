@@ -9,6 +9,7 @@ get_header(); ?>
 		document.getElementById('tsb').style.display = 'none';
 		jQuery(window).load(function() {
 			jQuery('h1').css('color', '#FFFFFF');
+			jQuery('h1').css('padding-bottom', '0');
 			jQuery('.site-content').css('padding-top', '250px'); 
 		});
 	</script>
