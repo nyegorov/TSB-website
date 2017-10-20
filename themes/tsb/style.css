@@ -69,6 +69,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	vertical-align: baseline;
 }
 
+html, body, .site {
+	height: 100%;
+}
+
 html {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -1378,7 +1382,7 @@ img.aligncenter {
 
 .site-content {
 	display: block;
-	float: left;
+/*	float: left;*/
 	padding-top: 300px;
 	margin-left: calc((100% - 150px) / 4 + 30px);
 	width: calc(100% - (100% - 150px) / 4 - 30px);
@@ -2514,6 +2518,19 @@ a.post-thumbnail:focus {
 .site-info a:focus {
 }
 
+/* sticky footer */
+.site-content {
+  min-height: 100%;
+  margin-bottom: -112px; 
+}
+
+.site-content:after {
+  display: block;
+}
+
+.site-footer, .site-content:after {
+  height: 112px; 
+}
 
 /**
  * 14.0 Media
@@ -2790,7 +2807,7 @@ p > video {
 }
 
 .collapseomatic_content {
-	padding: 16px 400px 32px 0;
+	padding: 16px 30% 32px 0;
 	margin: 0;
 }
 

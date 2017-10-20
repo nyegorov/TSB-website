@@ -27,5 +27,9 @@
 
 <?php wp_footer(); ?>
 
+<?php if(is_admin_bar_showing()) { ?>
+<script> jQuery(window).load(function() { jQuery('html').css('height', 'calc(100% - 32px)');	}); </script>
+<?php } ?>
+
 </body>
 </html>
