@@ -11,7 +11,7 @@ var lastId, topMenu, topMenuHeight, menuItems, scrollItems;
 
 var onScroll = function(){
    // Get container scroll position
-   var fromTop = jQuery(this).scrollTop()+300;
+   var fromTop = jQuery(this).scrollTop()+20;
    
    // Get id of current scroll item
    var cur = scrollItems.map(function(){
@@ -61,7 +61,7 @@ jQuery(window).scroll(onScroll);
 
 	<?php while( $wp_query->have_posts()) : $wp_query->the_post(); ?>
 		<article class="page type-page status-publish hentry"><div class="entry-content">
-		<a id="post<?php the_ID();?>"></a>
+		<a id="post<?php the_ID();?>">&nbsp;</a>
 		<?php 
 			the_post_thumbnail( 'full', array( 'alt' => get_the_title() ) );
 			the_date('d. F Y', '<br><br><br><h1>', '</h1>');

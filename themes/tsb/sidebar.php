@@ -39,7 +39,10 @@
 						foreach ( $posts as $post ) { 
 							$year = get_the_date('Y', $post);
 							$mont = get_the_date('F', $post);
-							if($year != $prev_year) { echo '<li class="menu-item"><a></a>' . $year . '</li><ul class="sub-menu toggled-on">'; $prev_mont = ''; }
+							if($year != $prev_year) { 
+								if($prev_year != '') echo "</ul>"; 
+								echo '<li class="menu-item"><a></a>' . $year . '</li><ul class="sub-menu toggled-on">'; $prev_mont = ''; 
+							}
 							if($mont != $prev_mont) { echo '<li class="menu-item"><a href="#post'.get_the_ID($post).'">' . $mont . '</a></li>';}
 							$prev_mont = $mont;
 							$prev_year = $year;

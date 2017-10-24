@@ -69,7 +69,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	vertical-align: baseline;
 }
 
-html, body, .site {
+html, body, .site	{
 	height: 100%;
 }
 
@@ -1400,11 +1400,14 @@ img.aligncenter {
 	float: right;
 	text-align: right;
 	font-size: 112px;
+	line-height: 92px;
+	padding-top: 20px;
 	position: fixed;
 	top: 0px;
 	right: 30px;
 	z-index: 100;
 	visibility: hidden;
+	vertical-align: top;
 	color: #FF9F2C;
 }
 
@@ -1416,9 +1419,13 @@ img.aligncenter {
     white-space: nowrap;
    	overflow: hidden;
 	display: inline-block;
-	vertical-align: bottom;
+	vertical-align: top;
 	text-align: right;
 	direction: rtl;
+}
+
+#tsb3 {
+	line-height: 140px;
 }
 
 #cover {
@@ -1674,7 +1681,7 @@ img.aligncenter {
  */
 
 .hentry {
-	padding-top: 20px;
+	padding-top: 0px;
 	padding-bottom: 110px;
 	position: relative;
 }
