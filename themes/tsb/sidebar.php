@@ -73,7 +73,7 @@
 		</nav>
 
 		<div class="menu-footer<?php if(is_page($page->post_title)) echo "-active"?>">
-			<a href="/kontakt/impressum">Impressum</a>
+			<a href="<?php echo get_page_link(get_page_by_title('Impressum')->ID) ?>">Impressum</a>
 		</div>
 
 	</div><!-- .secondary -->

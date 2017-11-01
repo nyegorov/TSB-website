@@ -177,43 +177,43 @@
 
 } )( jQuery );
 
-	function on_tsb_scroll()	{
-		jQuery('#tsb').css("opacity", Math.max(0, 200 - jQuery(document).scrollTop()) / 200);
+function on_tsb_scroll()	{
+	jQuery('#tsb').css("opacity", Math.max(0, 200 - jQuery(document).scrollTop()) / 200);
+};
+
+function init_tsb(ids, dont_close)	{
+	var tsb = {	blocks: [] };
+	var widen = function(b, state)	 { 
+		if(state)	{
+			b.text.animate( {width: b.width}, 200, 'swing', function() { 
+				jQuery.each(tsb.blocks, function(i, o) {if(b.id != o.id)	widen(o, false); });
+			});
+		}	else {
+			b.text.stop(); 
+			b.text.css('width', '0px'); 
+		}
 	};
 
-	function init_tsb(ids, dont_close)	{
-		var tsb = {	blocks: [] };
-		var widen = function(b, state)	 { 
-			if(state)	{
-				b.text.animate( {width: b.width}, 200, 'swing', function() { 
-					jQuery.each(tsb.blocks, function(i, o) {if(b.id != o.id)	widen(o, false); });
-				});
-			}	else {
-				b.text.stop(); 
-				b.text.css('width', '0px'); 
-			}
-		};
-
-		jQuery.each(ids, function(i, id) { 
-			var o_block = jQuery('#'+id);
-			var o_text  = jQuery('#'+id+'-txt');
-			tsb.blocks[i] = {
-				id:    id,
-				text:  o_text,
-				block: o_block,
-				width: o_text.innerWidth(),
-			}
-			if(!dont_close) widen(tsb.blocks[i], false);
-			o_block.mouseenter(function() {
-				id = this.id;
-				jQuery.each(tsb.blocks, function(i, o) { widen(o, o.id == id);});
-			});
-			o_block.mouseleave(function() {
-				id = this.id;
-				jQuery.each(tsb.blocks, function(i, o) { if(o.id == id) widen(o, false) });
-			});	
+	jQuery.each(ids, function(i, id) { 
+		var o_block = jQuery('#'+id);
+		var o_text  = jQuery('#'+id+'-txt');
+		tsb.blocks[i] = {
+			id:    id,
+			text:  o_text,
+			block: o_block,
+			width: o_text.innerWidth(),
+		}
+		if(!dont_close) widen(tsb.blocks[i], false);
+		o_block.mouseenter(function() {
+			id = this.id;
+			jQuery.each(tsb.blocks, function(i, o) { widen(o, o.id == id);});
 		});
+		o_block.mouseleave(function() {
+			id = this.id;
+			jQuery.each(tsb.blocks, function(i, o) { if(o.id == id) widen(o, false) });
+		});	
+	});
 
-		jQuery(window).scroll(on_tsb_scroll);
-		on_tsb_scroll();
-	}
+	jQuery(window).scroll(on_tsb_scroll);
+	on_tsb_scroll();
+}
