@@ -217,3 +217,13 @@ function init_tsb(ids, dont_close)	{
 	jQuery(window).scroll(on_tsb_scroll);
 	on_tsb_scroll();
 }
+
+function showmenu(show)	{
+	var sidebar   = jQuery('.secondary');
+	sidebar.css('visibility', show ? 'visible' : 'hidden');
+	if(show)	{
+		jQuery('body').addClass('stop-scrolling');
+	}	else	{
+		jQuery('body').removeClass('stop-scrolling');
+	}
+}

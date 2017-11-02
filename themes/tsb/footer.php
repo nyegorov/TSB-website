@@ -13,14 +13,7 @@
 	</div><!-- .site-content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<table><tr>
-			<td></td>
-			<td><?php echo get_custom('company_name');?></td>
-			<td><?php echo get_custom('company_address');?></td>
-			<td><?php echo get_custom('company_tel');?><br><?php echo get_custom('company_email');?></td>
-			</tr></table>
-		</div><!-- .site-info -->
+<div></div><div><?php echo get_custom('company_name');?></div><div style="width:1px;padding:0"></div><div><?php echo get_custom('company_address');?></div><div><?php echo get_custom('company_tel');?><br><?php echo get_custom('company_email');?></div>
 	</footer><!-- .site-footer -->
 
 </div><!-- .site -->

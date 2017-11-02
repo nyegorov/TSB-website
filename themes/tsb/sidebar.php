@@ -7,7 +7,11 @@
  * @since TSB 1.0
  */
 ?>
+	<div id="hamburger" class="hamburger" onclick="showmenu(true)"></div>
+
 	<div id="secondary" class="secondary">
+
+		<div id="hamb_close" class="hamb_close" onclick="showmenu(false)"></div>
 
 		<nav class="main-navigation">
 			<div class="menu-main-menu-container">
