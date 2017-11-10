@@ -1,4 +1,5 @@
 <div id="tsb" class="tsb-block">
+<?php $show_animation = is_front_page() && !wp_is_mobile() && strpos(wp_get_referer(), get_site_url()) === false; ?>
 <?php if(wp_is_mobile()) { ?>
 	<!--<div><span id="tsb1" class="tsb">T</span><span id="tsb2" class="tsb">S</span></div>
 	<span id="tsb3" class="tsb">B</span>-->
@@ -10,14 +11,14 @@
 </div>
 
 
-<?php if(is_front_page() && !wp_is_mobile()) { ?>
+<?php if($show_animation) { ?>
 <div id="cover"></div>
 <?php } ?>
 
 <script> 
 window.onload = function () { 
 	document.getElementById('tsb').style.visibility = 'visible';
-<?php if(is_front_page() && !wp_is_mobile()) { ?>
+<?php if($show_animation) { ?>
 	jQuery('#tsb').show();
 	init_tsb(["tsb1", "tsb2", "tsb3"], true); 
 	jQuery(window).scrollTop(0);

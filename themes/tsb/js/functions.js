@@ -25,7 +25,7 @@
 			_this.toggleClass( 'toggle-on' );
 			_this.next( '.children, .sub-menu' ).toggleClass( 'toggled-on' );
 			_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
-			_this.html( _this.html() === screenReaderText.expand ? screenReaderText.collapse : screenReaderText.expand );
+			//_this.html( _this.html() === screenReaderText.expand ? screenReaderText.collapse : screenReaderText.expand );
 		} );
 	}
 	initMainNavigation( $( '.main-navigation' ) );
@@ -183,14 +183,14 @@ function on_tsb_scroll()	{
 
 function init_tsb(ids, dont_close)	{
 	var tsb = {	blocks: [] };
-	var widen = function(b, state)	 { 
+	var widen = function(b, state, force)	 { 
 		if(state)	{
 			b.text.animate( {width: b.width}, 200, 'swing', function() { 
 				jQuery.each(tsb.blocks, function(i, o) {if(b.id != o.id)	widen(o, false); });
 			});
 		}	else {
 			b.text.stop(); 
-			b.text.css('width', '0px'); 
+			if(force)	b.text.css('width', '0');	else b.text.animate( {width: 0}, 200, 'swing');
 		}
 	};
 
@@ -203,14 +203,14 @@ function init_tsb(ids, dont_close)	{
 			block: o_block,
 			width: o_text.innerWidth(),
 		}
-		if(!dont_close) widen(tsb.blocks[i], false);
+		if(!dont_close) widen(tsb.blocks[i], false, true);
 		o_block.mouseenter(function() {
 			id = this.id;
-			jQuery.each(tsb.blocks, function(i, o) { widen(o, o.id == id);});
+			jQuery.each(tsb.blocks, function(i, o) { widen(o, o.id == id, false);});
 		});
 		o_block.mouseleave(function() {
 			id = this.id;
-			jQuery.each(tsb.blocks, function(i, o) { if(o.id == id) widen(o, false) });
+			jQuery.each(tsb.blocks, function(i, o) { if(o.id == id) widen(o, false, false) });
 		});	
 	});
 
@@ -219,11 +219,17 @@ function init_tsb(ids, dont_close)	{
 }
 
 function showmenu(show)	{
-	var sidebar   = jQuery('.secondary');
-	sidebar.css('visibility', show ? 'visible' : 'hidden');
+	var sidebar = jQuery('.sidebar');
+	var menu    = jQuery('.secondary');
+	var body    = jQuery('body');
 	if(show)	{
-		jQuery('body').addClass('stop-scrolling');
+		body.addClass('stop-scrolling');
+		sidebar.css('width',  '100%');
+		sidebar.css('height', '100%');
 	}	else	{
-		jQuery('body').removeClass('stop-scrolling');
+		body.removeClass('stop-scrolling');
+		sidebar.css('width',  '0');
+		sidebar.css('height', '0');
 	}
+	menu.css('visibility', show ? 'visible' : 'hidden');
 }

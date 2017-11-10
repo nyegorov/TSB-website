@@ -13,11 +13,11 @@ jQuery(window).load(function() {
     galleryItems = gallery.find("img");
     // Anchors corresponding to menu items
 	menuItems.mouseenter(function() { 
-		jQuery(this).parent().addClass("current-menu-item");
+		//jQuery(this).parent().addClass("current-menu-item");
 		jQuery('#gal'+this.id.substr(4)).css('opacity', '1');
 	});
 	menuItems.mouseleave(function() { 
-		jQuery(this).parent().removeClass("current-menu-item");
+		//jQuery(this).parent().removeClass("current-menu-item");
 		jQuery('#gal'+this.id.substr(4)).css('opacity', '');
 	});
 

@@ -8,9 +8,10 @@ get_header(); ?>
 		jQuery('body').css('background-color', '#FF9F2C');
 		document.getElementById('tsb').style.display = 'none';
 		jQuery(window).load(function() {
-			jQuery('h1').css('color', '#FFFFFF');
-			jQuery('h1').css('padding-bottom', '0');
-			jQuery('.site-content').css('padding-top', '250px'); 
+			jQuery('h1').css('color', '#000000');
+			jQuery('h1').css('padding-bottom', '5px');
+			jQuery('#menu_icon').attr("src", "<?php echo get_stylesheet_directory_uri();?>/icons/menu_black.svg");
+			jQuery('.site-content').css('padding-top', '80px'); 
 		});
 	</script>
 
