@@ -37,7 +37,8 @@
 					<li class="menu-item<?php if(is_page($page->post_title) || $is_case_study) echo " current-menu-item" ?>">
 					
 					<?php if($is_active_page) { 
-						echo '<span>' . $page->post_title . '</span>';
+						//echo '<span>' . $page->post_title . '</span>';
+						echo '<a class="sliding" href="' . esc_url($permalink) . '">' . $page->post_title . '</a>';
 					} else { 
 						echo '<a class="sliding" href="' . esc_url($permalink) . '">' . $page->post_title . '</a>';
 					} ?>

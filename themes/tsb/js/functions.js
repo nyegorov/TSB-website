@@ -22,10 +22,13 @@
 		container.find( '.dropdown-toggle' ).click( function( e ) {
 			var _this = $( this );
 			e.preventDefault();
-			_this.toggleClass( 'toggle-on' );
-			_this.next( '.children, .sub-menu' ).toggleClass( 'toggled-on' );
-			_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
-			//_this.html( _this.html() === screenReaderText.expand ? screenReaderText.collapse : screenReaderText.expand );
+
+			_this.siblings('.sub-menu').slideToggle(250, function() {
+				_this.toggleClass( 'toggle-on' );
+				$('.nav-menu ul ul').removeClass('toggled-on'); //ny
+				_this.next( '.children, .sub-menu' ).toggleClass( 'toggled-on' );
+				_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
+			});
 		} );
 	}
 	initMainNavigation( $( '.main-navigation' ) );

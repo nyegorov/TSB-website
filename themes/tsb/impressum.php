@@ -12,13 +12,13 @@ get_header(); ?>
 		});
 	</script>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area impressum">
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) :
 			// Start the loop.
 			while ( have_posts() ) : the_post(); ?>
-			<div class="entry-content impressum"><?php the_content(); ?></div>
+			<div class="entry-content"><?php the_content(); ?></div>
 			<?php endwhile;
 		endif;
 		?>

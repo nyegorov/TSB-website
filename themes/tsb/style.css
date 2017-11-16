@@ -1380,9 +1380,12 @@ img.aligncenter {
 
 .site-content {
 	display: block;
-	padding-top: 300px;
 	margin-left: calc((100% - 150px) / 4 + 30px);
 	width: calc(100% - (100% - 150px) / 4 - 30px);
+}
+
+.content-area {
+	padding-top: 300px;
 }
 
 .secondary {
@@ -1748,6 +1751,11 @@ a.post-thumbnail:focus {
 .entry-content > :last-child,
 .entry-summary > :last-child {
 	margin-bottom: 0;
+}
+
+.furwen h5 {
+	display: inline-block;
+	width: 33%;
 }
 
 .entry-content,
@@ -2537,7 +2545,7 @@ a.post-thumbnail:focus {
 }
 
 .impressum {
-	margin-top: -50px;
+	padding-top: 250px;
 }
 
 .impressum h1 {
@@ -2855,6 +2863,13 @@ p > video {
 @media screen and (max-width: 1023px) { 
 	/* phone layout */ 
 
+	body {
+		background-color: #FF9F2C;
+	}
+
+	.site-content { background-color: #FFFFFF; }
+	
+
 	h1 {
 		font-size: 8px;
 		line-height: 10px;
@@ -2947,10 +2962,13 @@ p > video {
 	.entry-content, .entry-summary { padding: 0 10px 10px; font-size: 12px; }
 	.entry-header {	padding-left: 10px; }
 
+	.content-area {
+		padding-top: 250px;
+	}
+
 	.site-content {
 		margin-left: 0px;
 		width: 100%;
-		padding-top: 250px;
 	}
 
 	.site-content { margin-bottom: -161px; }
@@ -2994,7 +3012,17 @@ p > video {
 	}
 
 	.impressum {
-		margin-top: -170px;
+		padding-top: 80px;
+		background-color: #FF9F2C;
+		min-height: calc(100% - 161px);
+		display: block;
 	}
 
+	#wpgmza_map {
+		height: 360px !important;
+	}
+
+	.furwen h5 {
+		width: 100%;
+	}
 }

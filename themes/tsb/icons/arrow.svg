@@ -5,27 +5,46 @@
 <style type="text/css">
 	.st0{clip-path:url(#SVGID_2_);fill:none;stroke:#FF9F2C;stroke-width:0.5;stroke-miterlimit:10;}
 	.st1{clip-path:url(#SVGID_4_);fill:none;stroke:#FF9F2C;stroke-width:0.5;stroke-miterlimit:10;}
-	.st2{fill:#FF9F2C;}
+	.st2{clip-path:url(#SVGID_6_);fill:none;stroke:#FF9F2C;stroke-width:0.5;stroke-miterlimit:10;}
+	.st3{clip-path:url(#SVGID_8_);fill:none;stroke:#FF9F2C;stroke-width:0.5;stroke-miterlimit:10;}
+	.st4{fill:#FF9F2C;}
+	.st5{fill:none;stroke:#FF9F2C;stroke-miterlimit:10;}
 </style>
 <g>
-	<defs>
-		<rect id="SVGID_1_" x="-806" y="-1617.9" width="1650" height="3275"/>
-	</defs>
-	<clipPath id="SVGID_2_">
-		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
-	</clipPath>
-	<line class="st0" x1="808" y1="584.1" x2="808" y2="565.4"/>
-	<polyline class="st0" points="815,573.1 808,565.2 800.8,573.1 	"/>
+	<g>
+		<defs>
+			<rect id="SVGID_1_" x="-806" y="-1617.9" width="1650" height="3275"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+		</clipPath>
+	</g>
+	<g>
+		<defs>
+			<rect id="SVGID_3_" x="-806" y="-1617.9" width="1650" height="3275"/>
+		</defs>
+		<clipPath id="SVGID_4_">
+			<use xlink:href="#SVGID_3_"  style="overflow:visible;"/>
+		</clipPath>
+	</g>
 </g>
 <g>
-	<defs>
-		<rect id="SVGID_3_" x="-886" y="-1672.9" width="1650" height="3275"/>
-	</defs>
-	<clipPath id="SVGID_4_">
-		<use xlink:href="#SVGID_3_"  style="overflow:visible;"/>
-	</clipPath>
-	<line class="st1" x1="728" y1="529.1" x2="728" y2="510.4"/>
-	<polyline class="st1" points="735,518.1 728,510.2 720.8,518.1 	"/>
+	<g>
+		<defs>
+			<rect id="SVGID_5_" x="-886" y="-1672.9" width="1650" height="3275"/>
+		</defs>
+		<clipPath id="SVGID_6_">
+			<use xlink:href="#SVGID_5_"  style="overflow:visible;"/>
+		</clipPath>
+	</g>
+	<g>
+		<defs>
+			<rect id="SVGID_7_" x="-886" y="-1672.9" width="1650" height="3275"/>
+		</defs>
+		<clipPath id="SVGID_8_">
+			<use xlink:href="#SVGID_7_"  style="overflow:visible;"/>
+		</clipPath>
+	</g>
 </g>
-<polygon class="st2" points="16.2,9.1 9,1.9 1.8,9.1 2.2,9.5 8.8,2.9 8.8,20.3 9.2,20.3 9.2,2.9 15.8,9.5 "/>
+<polygon class="st4" points="16.3,9 9,1.6 1.6,8.9 2.3,9.6 8.5,3.5 8.5,20.3 9.5,20.3 9.5,3.5 15.6,9.7 "/>
 </svg>
