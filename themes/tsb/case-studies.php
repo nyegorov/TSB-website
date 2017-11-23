@@ -26,6 +26,10 @@ jQuery(window).load(function() {
 	galleryItems.mouseleave(function() { jQuery('#post'+this.id.substr(3)).parent().removeClass("current-menu-item");});
 });
 
+function opencase(url)	{
+	window.location.href = url;
+}
+
 </script>
 
 <div id="primary" class="content-area">
@@ -43,7 +47,7 @@ jQuery(window).load(function() {
 	if($wp_query->have_posts()) { 
 		while($wp_query->have_posts() )	{ 
 			$wp_query->the_post();
-			echo '<figure class="gallery-item"><div class="gallery-icon landscape"><a href="'; the_permalink(); echo '">';
+			echo '<figure class="gallery-item"><div class="gallery-icon landscape" touchend="opencase(\'';the_permalink(); echo '\')"><a href="'; the_permalink(); echo '">';
 			echo get_the_post_thumbnail( null, 'large', array( 'class' => 'gallery-icon', 'id' => 'gal'.get_the_ID()) );
 			echo '</a></div></figure>';
 		} 

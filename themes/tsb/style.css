@@ -1386,6 +1386,7 @@ img.aligncenter {
 
 .content-area {
 	padding-top: 300px;
+	background-color: white;
 }
 
 .secondary {
@@ -2545,6 +2546,7 @@ a.post-thumbnail:focus {
 }
 
 .impressum {
+	background-color: #FF9F2C;
 	padding-top: 250px;
 }
 
@@ -2867,7 +2869,7 @@ p > video {
 		background-color: #FF9F2C;
 	}
 
-	.site-content { background-color: #FFFFFF; }
+	/*.site-content { background-color: #FFFFFF; }*/
 	
 
 	h1 {
@@ -3014,7 +3016,6 @@ p > video {
 	.impressum {
 		padding-top: 80px;
 		background-color: #FF9F2C;
-		min-height: calc(100% - 161px);
 		display: block;
 	}
 

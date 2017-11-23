@@ -34,5 +34,10 @@ window.onload = function () {
 <?php } else { ?>
 	init_tsb(["tsb1", "tsb2", "tsb3"], false); 
 <?php } ?>
+	var isIOS = /iPhone|iPad|iPod/.test( navigator.userAgent );
+	if(isIOS)	{
+		jQuery('.menu-item a').on('touchstart', function() { window.location.href = jQuery(this).attr("href"); });
+		jQuery('.gallery-item div a').on('touchstart', function() { window.location.href = jQuery(this).attr("href"); });
+	}
 } 
 </script>
