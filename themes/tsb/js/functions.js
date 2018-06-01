@@ -1,4 +1,17 @@
 /* global screenReaderText */
+
+function getCookie(name) {
+  var matches = document.cookie.match(new RegExp(
+    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+  ));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
+function setCookie(name, value) {
+  value = encodeURIComponent(value);
+  document.cookie = name + "=" + value;
+}
+
 /**
  * Theme functions file.
  *
@@ -248,3 +261,7 @@ function showmenu(show)	{
 	}
 	menu.css('visibility', show ? 'visible' : 'hidden');
 }
+
+function gdpr_confirm() { setCookie("gdpr_ok", "1"); jQuery(".gdpr").hide();	}
+
+window.addEventListener("load", function() { if(getCookie("gdpr_ok") != "1") jQuery(".gdpr").show(); });

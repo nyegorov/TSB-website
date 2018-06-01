@@ -36,7 +36,7 @@ Author: Nick Yegorov, Logis
  *    12.2 - Post Formats
  *    12.3 - Comments
  * 13.0 - Footer
- * 14.0 - Media
+ * 14.0 - menu-footerMedia
  *    14.1 - Captions
  *    14.2 - Galleries
  * 15.0 - Multisite
@@ -2533,11 +2533,11 @@ a.post-thumbnail:focus {
 	left:30px
 }
 
-.menu-footer a {
+.menu-footer-a {
 	border-bottom: none;
 }
 
-.menu-footer-active a {
+.menu-footer-a-active {
 	border-bottom: 1px solid #000000;
 }
 
@@ -2842,6 +2842,37 @@ p > video {
 
 .colomat-close {
 	background-image: url(icons/arrow.svg) !important;
+}
+
+.gdpr {
+	display: none;
+	position:fixed;
+	float: bottom;
+	bottom: 0px;
+	background: #FF9F2C;
+	/*border-top: 1px solid #D2D2D2;*/
+	width: 100%;
+}
+
+.gdpr table {
+	table-layout: auto;
+}
+
+.gdpr td {
+	padding: 3px 20px;
+	vertical-align: middle;
+}
+
+.gdpr a {
+	text-decoration: none;
+	color: black;	
+}
+
+.gdpr-ok {
+	display: inline-block;
+	padding: 10px 20px;
+	border: 1px solid black;
+	cursor: pointer;
 }
 
 /**

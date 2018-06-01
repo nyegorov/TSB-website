@@ -24,5 +24,13 @@
 <script> jQuery(window).load(function() { jQuery('html').css('height', 'calc(100% - 32px)');	}); </script>
 <?php } ?>
 
+<div class="gdpr">
+	<table cellspacing="20"><tr>
+	<td>Cookies helfen uns bei der Bereitstellung unserer Website. Durch die Nutzung der Website erklären Sie sich damit einverstanden, dass wir Cookies setzen.</td>
+	<?php if(!wp_is_mobile()) { ?><td width="40"><a href="kontakt/datenschutz">Datenschutzerklärung</a></td><?php }?>
+	<td width="40"><div class="gdpr-ok" onclick="gdpr_confirm()">OK</div></td>
+	</tr></table>
+</div>
+
 </body>
 </html>

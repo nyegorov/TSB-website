@@ -88,8 +88,9 @@
 
 		</nav>
 
-		<div class="menu-footer<?php if(is_page($page->post_title)) echo "-active"?>">
-			<a href="<?php echo get_page_link(get_page_by_title('Impressum')->ID) ?>">Impressum</a>
+		<div class="menu-footer">
+			<a class="menu-footer-a<?php if(get_the_title() == 'Datenschutz') echo "-active"?>" href="<?php echo get_page_link(get_page_by_title('Datenschutz')->ID) ?>">Datenschutz</a><br>
+			<a class="menu-footer-a<?php if(get_the_title() == 'Impressum') echo "-active"?>" href="<?php echo get_page_link(get_page_by_title('Impressum')->ID) ?>">Impressum</a>
 		</div>
 
 	</div><!-- .secondary -->
