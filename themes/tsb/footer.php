@@ -25,11 +25,23 @@
 <?php } ?>
 
 <div class="gdpr">
-	<table cellspacing="20"><tr>
+	<table cellspacing="20">
+<?php if(!wp_is_mobile()) { ?>
+	<tr>
 	<td>Cookies helfen uns bei der Bereitstellung unserer Website. Durch die Nutzung der Website erklären Sie sich damit einverstanden, dass wir Cookies setzen.</td>
-	<?php if(!wp_is_mobile()) { ?><td width="40"><a href="kontakt/datenschutz">Datenschutzerklärung</a></td><?php }?>
+	<td width="40"><a href="kontakt/datenschutz">Datenschutzerklärung</a></td>
 	<td width="40"><div class="gdpr-ok" onclick="gdpr_confirm()">OK</div></td>
-	</tr></table>
+	</tr>
+<?php } else {?>
+	<tr>
+		<td colspan="2">Cookies helfen uns bei der Bereitstellung unserer Website. Durch die Nutzung der Website erklären Sie sich damit einverstanden, dass wir Cookies setzen.</td>
+	</tr>
+	<tr>
+		<td width="40"><a href="kontakt/datenschutz">Datenschutzerklärung</a></td>
+		<td width="40" align="right" style="text-align: right"><div class="gdpr-ok" onclick="gdpr_confirm()">OK</div></td>
+	</tr>
+<?php }?>
+	</table>
 </div>
 
 </body>
